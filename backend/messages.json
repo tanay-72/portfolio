@@ -1,0 +1,9 @@
+[
+  {
+    "id": "mrj265za59n3q",
+    "name": "CLI Verification Agent",
+    "email": "cli@verification.com",
+    "message": "This is a direct curl test to verify the Express server.",
+    "timestamp": "2026-07-13T10:07:17.446Z"
+  }
+]

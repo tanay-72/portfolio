@@ -1,0 +1,206 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #131313;
+    color: #e5e2e1;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    font-family: 'Hanken Grotesk', sans-serif;
+  }
+}
+
+@keyframes grain-animation {
+  0%, 100% { transform:translate(0, 0) }
+  10% { transform:translate(-1%, -1%) }
+  20% { transform:translate(-2%, 1%) }
+  30% { transform:translate(1%, -2%) }
+  40% { transform:translate(-1%, 2%) }
+  50% { transform:translate(-2%, 1%) }
+  60% { transform:translate(2%, 0) }
+  70% { transform:translate(-1%, 1%) }
+  80% { transform:translate(1%, 2%) }
+  90% { transform:translate(-2%, -2%) }
+}
+
+.noise-overlay {
+  position: fixed;
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+  z-index: 9999;
+  animation: grain-animation 6s steps(10) infinite;
+}
+
+.chiaroscuro-gradient {
+  background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.05) 0%, rgba(19, 19, 19, 1) 100%);
+}
+
+.glass-edge {
+  border-top: 1px solid rgba(244, 241, 234, 0.1);
+  border-left: 1px solid rgba(244, 241, 234, 0.1);
+}
+
+.bronze-glow {
+  box-shadow: 0 10px 30px rgba(140, 98, 57, 0.15);
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+.bronze-glow:hover {
+  box-shadow: 0 15px 45px rgba(242, 202, 80, 0.2);
+  transform: translateY(-4px) scale(1.02);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(to bottom right, #f2ca50, #8C6239);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.timeline-line {
+  background: linear-gradient(to bottom, transparent, #8C6239 15%, #8C6239 85%, transparent);
+}
+
+/* Scroll reveal utility */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Nav Link Underline */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #f2ca50;
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+.nav-link-active::after {
+  width: 100%;
+}
+
+/* Magnetic Button Effect */
+.btn-magnetic {
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.btn-magnetic:hover {
+  transform: translateY(-5px) scale(1.05);
+}
+
+/* Parallax utility */
+.parallax-layer {
+  transition: transform 0.1s linear;
+  will-change: transform;
+}
+
+/* Smooth custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0e0e0e;
+}
+::-webkit-scrollbar-thumb {
+  background: #4d4635;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f2ca50;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal, .bronze-glow:hover, .btn-magnetic:hover, .animate-float, .animate-rotate-slow, .ambient-glow-bg {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
+@keyframes background-pulse {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(6%, 6%) scale(1.15);
+    opacity: 0.45;
+  }
+}
+
+.ambient-glow-bg {
+  position: absolute;
+  width: 70vw;
+  height: 70vw;
+  max-width: 800px;
+  max-height: 800px;
+  background: radial-gradient(circle, rgba(242, 202, 80, 0.05) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 0;
+  animation: background-pulse 24s ease-in-out infinite alternate;
+}
+
+/* Blueprint Grid Layer */
+.blueprint-grid {
+  position: fixed;
+  inset: -10%;
+  width: 120%;
+  height: 120%;
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, rgba(242, 202, 80, 0.015) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(242, 202, 80, 0.015) 1px, transparent 1px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes morph {
+  0%, 100% {
+    border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+    transform: scale(1);
+  }
+  50% {
+    border-radius: 70% 30% 52% 48% / 60% 40% 60% 40%;
+    transform: scale(1.05);
+  }
+}
+.animate-morph {
+  animation: morph 4s ease-in-out infinite;
+}
+
+@keyframes shockwave {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(22);
+    opacity: 0;
+  }
+}
+.animate-shockwave {
+  animation: shockwave 0.6s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+}
