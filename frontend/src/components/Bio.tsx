@@ -37,7 +37,7 @@ export const Bio: React.FC = () => {
               My Focus
             </h2>
             <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed text-base md:text-lg mb-6">
-              I approach software engineering with a strong focus on algorithmic logic and structural precision. As a LeetCode Knight and Codeforces Specialist with over 900 coding problems, I believe that high-performance code starts with optimal data structures and clean, mathematical reasoning. Whether I am building secure, chunked file-streaming systems or orchestrating TypeScript-based monorepos, I aim for structural excellence at every level of the stack.
+              I approach software engineering with a strong focus on algorithmic logic and structural precision. As a LeetCode Knight and Codeforces Specialist with over 900+ coding problems, I believe that high-performance code starts with optimal data structures and clean, mathematical reasoning. Whether I am building secure, chunked file-streaming systems or orchestrating TypeScript-based monorepos, I aim for structural excellence at every level of the stack.
             </p>
             <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed text-base md:text-lg">
               My engineering expertise centers on developing scalable backends using TypeScript (NestJS, Next.js) and Python (FastAPI), managing relational databases like PostgreSQL with Prisma, and designing automated machine learning workflows. I focus on implementing robust security standards (such as SHA-256 deduplication and HMAC tokens), containerizing applications via Docker, and creating smooth, responsive React interfaces that deliver premium user experiences.
