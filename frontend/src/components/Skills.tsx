@@ -36,7 +36,7 @@ export const Skills: React.FC = () => {
     { label: "Peak Codeforces Rating", value: "1446", desc: "Specialist" },
     { label: "Codeforces Round 1107", value: "Rank 917", desc: "Out of thousands of global competitors" },
     { label: "LeetCode Weekly Contest 510", value: "Rank 985", desc: "Performance index" },
-    { label: "Algorithmic Challenges Solved", value: "900+", desc: "Across LeetCode and Codeforces platforms" }
+    { label: "Algorithmic Challenges Solved", value: "950+", desc: "Across LeetCode and Codeforces platforms" }
   ];
 
   const courses = [
